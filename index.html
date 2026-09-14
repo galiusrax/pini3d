@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
+:root{
     --paper: #EFEEE8;
     --paper-deep: #E2DFD5;
     --ink: #1B2430;
@@ -344,6 +344,96 @@
     nav ul.open{transform:translateY(0);}
     .burger{display:block;}
   }
+
+/* ---------- página de detalle de producto ---------- */
+.breadcrumb{
+  font-size:0.9rem;
+  color:var(--ink-soft);
+  margin-bottom:36px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+.breadcrumb a{
+  color:var(--blue);
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+}
+.breadcrumb a:hover{border-color:var(--blue);}
+.detail{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:56px;
+  align-items:start;
+  padding:20px 0 60px;
+}
+.detail-media{
+  background:var(--white);
+  border:1px solid var(--line);
+  padding:16px;
+}
+.detail-media img{width:100%;}
+.detail-copy h1{
+  font-size:clamp(2rem,3.4vw,2.7rem);
+  margin-bottom:16px;
+}
+.detail-copy p.desc{
+  color:var(--ink-soft);
+  font-size:1.05rem;
+  margin-bottom:22px;
+  max-width:46ch;
+}
+.detail-copy .price{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.6rem;
+  font-weight:600;
+  margin-bottom:28px;
+  display:block;
+}
+.detail-copy .price small{
+  font-family:'IBM Plex Sans',sans-serif;
+  font-weight:400;
+  font-size:0.85rem;
+  color:var(--ink-soft);
+  margin-left:8px;
+}
+.other-products{
+  border-top:1px solid var(--line);
+  padding:56px 0 80px;
+}
+.other-products h2{
+  font-size:1.4rem;
+  margin-bottom:26px;
+}
+.other-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+}
+.other-card{
+  display:block;
+  text-decoration:none;
+  color:var(--ink);
+  background:var(--white);
+  border:1px solid var(--line);
+}
+.other-card img{width:100%;}
+.other-card .other-card-body{
+  padding:16px 18px;
+}
+.other-card h3{font-size:1.05rem; margin-bottom:6px;}
+.other-card span{color:var(--ink-soft); font-size:0.9rem;}
+.other-card:hover{border-color:var(--orange);}
+
+@media (max-width:860px){
+  .detail{grid-template-columns:1fr;}
+  .other-grid{grid-template-columns:1fr;}
+}
+
+.product-media{display:block;}
+.product-copy h3 a{color:inherit; text-decoration:none;}
+.product-copy h3 a:hover{color:var(--orange);}
+.product-copy .btn{margin-top:4px;}
 </style>
 </head>
 <body>
@@ -420,38 +510,41 @@
       </div>
 
       <div class="product">
-        <div class="product-media">
+        <a class="product-media" href="productos/manopla-pompompurin.html">
           <img src="img/manopla-pompompurin.png" alt="Manopla de Pompompurin impresa en 3D, color amarillo">
-        </div>
+        </a>
         <div class="product-copy">
           <span class="tag">Catálogo</span>
-          <h3>Manopla de Pompompurin</h3>
+          <h3><a href="productos/manopla-pompompurin.html">Manopla de Pompompurin</a></h3>
           <p class="desc">Manopla decorativa inspirada en Pompompurin, para llevar en la mano o colgar. Color a elección de filamento.</p>
           <p class="price">$3.500 <small>color a elección</small></p>
+          <a class="btn btn-ghost" href="productos/manopla-pompompurin.html">Ver detalle</a>
         </div>
       </div>
 
       <div class="product reverse">
-        <div class="product-media">
+        <a class="product-media" href="productos/soporte-guitarra.html">
           <img src="img/soporte-guitarra.png" alt="Soporte de guitarra para pared impreso en 3D, color naranjo">
-        </div>
+        </a>
         <div class="product-copy">
           <span class="tag">Catálogo</span>
-          <h3>Soporte de guitarra para pared</h3>
+          <h3><a href="productos/soporte-guitarra.html">Soporte de guitarra para pared</a></h3>
           <p class="desc">Soporte para colgar tu guitarra en la pared, con instalación mediante fijación con tornillos.</p>
           <p class="price">$3.000 <small>color a elección</small></p>
+          <a class="btn btn-ghost" href="productos/soporte-guitarra.html">Ver detalle</a>
         </div>
       </div>
 
       <div class="product">
-        <div class="product-media">
+        <a class="product-media" href="productos/portalapices-pompompurin.html">
           <img src="img/portalapices-pompompurin.png" alt="Portalápices Pompompurin impreso en 3D">
-        </div>
+        </a>
         <div class="product-copy">
           <span class="tag">Por encargo</span>
-          <h3>Portalápices Pompompurin</h3>
+          <h3><a href="productos/portalapices-pompompurin.html">Portalápices Pompompurin</a></h3>
           <p class="desc">Organizador de escritorio con forma de Pompompurin, ideal para lápices y stickers. Disponible por encargo.</p>
           <p class="price">Consultar precio</p>
+          <a class="btn btn-ghost" href="productos/portalapices-pompompurin.html">Ver detalle</a>
         </div>
       </div>
 
